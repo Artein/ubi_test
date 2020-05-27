@@ -191,7 +191,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.91316825, g: 0.9339623, b: 0.15419187, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -277,6 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _solarSystemCenterProvider: {fileID: 748548941}
   _planetsContainer: {fileID: 951114347}
+  _planetsGenerationSystem: {fileID: 1374479983}
 --- !u!114 &968969285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,10 +369,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2347da4cb7f654394dd8c1c2dd987e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _planetsAmount: 12
-  _generationDistanceMin: 2
-  _generationDistanceMax: 12
-  _planetPrefabs:
+  PlanetsAmount: 5
+  GenerationDistanceMin: 3
+  GenerationDistanceMax: 13
+  PlanetPrefabs:
   - {fileID: 7993337469439527097, guid: ac75e85d49dd1fd4bb6a09b25942cb91, type: 3}
 --- !u!1 &1687258581
 GameObject:
