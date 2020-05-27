@@ -8,8 +8,7 @@ using Zenject;
 public class PlanetsGenerationSystem : MonoBehaviour
 {
     [SerializeField, Min(0)] private int PlanetsAmount = 1;
-    [SerializeField, Min(0)] private float GenerationDistanceMin = 2;
-    [SerializeField, Min(0)] private float GenerationDistanceMax = 13; // todo: use RangeField
+    [SerializeField, MinMax(0, 20)] private MinMax GenerationDistanceRange;
     [SerializeField] private List<PlanetController> PlanetPrefabs;
     
     [Inject] private IInstantiator _instantiator;
@@ -22,9 +21,7 @@ public class PlanetsGenerationSystem : MonoBehaviour
     public Vector2 CalculateRandomOffset()
     {
         // todo: handle possible initial collision. Keep in mind planet size
-        var offset = new Vector2(
-            Random.Range(GenerationDistanceMin, GenerationDistanceMax), 
-            Random.Range(GenerationDistanceMin, GenerationDistanceMax));
+        var offset = new Vector2(GenerationDistanceRange.RandomValue, GenerationDistanceRange.RandomValue);
         return offset;
     }
 

@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
+using Utils;
 using Zenject;
 using Random = UnityEngine.Random;
 
 // todo: [optimization] in ECS will be *System
 public class PlanetMovementController : MonoBehaviour
 {
-    [SerializeField, Min(0)] private float RotationsPerMinuteMin = 1f;
-    [SerializeField, Min(0)] private float RotationsPerMinuteMax = 10f;
+    [SerializeField, MinMax(1, 10)] private MinMax RotationsPerMinuteRange;
     
     private float AngularSpeed => _rotationsPerSecond.Value * 360f;
     private float _currentAngle;
@@ -31,7 +31,7 @@ public class PlanetMovementController : MonoBehaviour
         _currentAngle = Random.Range(0, 360);
         if (!_rotationsPerSecond.HasValue)
         {
-            _rotationsPerSecond = Random.Range(RotationsPerMinuteMin, RotationsPerMinuteMax) / 60f;
+            _rotationsPerSecond = RotationsPerMinuteRange.RandomValue / 60f;
         }
     }
 
@@ -50,7 +50,7 @@ public class PlanetMovementController : MonoBehaviour
         transform.position = _pivotPosition + new Vector3(x, y, 0);
     }
 
-    private float GetNextAngle(float currentAngle, float angularSpeed)
+    private static float GetNextAngle(float currentAngle, float angularSpeed)
     {
         var newAngle = (currentAngle + angularSpeed) % 360f;
         return newAngle;

@@ -370,8 +370,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlanetsAmount: 5
-  GenerationDistanceMin: 3
-  GenerationDistanceMax: 13
+  GenerationDistanceRange:
+    Min: 2
+    Max: 13
   PlanetPrefabs:
   - {fileID: 7993337469439527097, guid: ac75e85d49dd1fd4bb6a09b25942cb91, type: 3}
 --- !u!1 &1687258581

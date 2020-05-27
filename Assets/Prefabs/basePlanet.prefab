@@ -56,5 +56,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1580309187711ab41b27bb53f4d6975f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationsPerMinuteMin: 1
-  RotationsPerMinuteMax: 10
+  RotationsPerMinuteRange:
+    Min: 1
+    Max: 10
