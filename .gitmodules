@@ -1,0 +1,3 @@
+[submodule "Assets/Plugins/Extenject"]
+	path = Assets/Plugins/Extenject
+	url = git@github.com:Artein/ubi_test_extenject.git
