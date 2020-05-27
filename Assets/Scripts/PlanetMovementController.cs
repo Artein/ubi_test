@@ -52,9 +52,7 @@ public class PlanetMovementController : MonoBehaviour
 
     private float GetNextAngle(float currentAngle, float angularSpeed)
     {
-        var newAngle = currentAngle + angularSpeed;
-        newAngle %= 360f;
-
+        var newAngle = (currentAngle + angularSpeed) % 360f;
         return newAngle;
     }
 }
