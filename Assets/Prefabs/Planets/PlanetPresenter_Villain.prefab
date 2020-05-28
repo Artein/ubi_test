@@ -1,55 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!212 &2353960575006739198
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5222753580732817268}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.8584906, g: 0.305793, b: 0.09313814, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1001 &3502967592282181399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,10 +7,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 885871147594581056, guid: 4777b364f21329d4e8772b928fc28004,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.59050864
+      objectReference: {fileID: 0}
+    - target: {fileID: 885871147594581056, guid: 4777b364f21329d4e8772b928fc28004,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499483739063425814, guid: 4777b364f21329d4e8772b928fc28004,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.57030743
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499483739063425814, guid: 4777b364f21329d4e8772b928fc28004,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.09411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499483739063425814, guid: 4777b364f21329d4e8772b928fc28004,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.85882354
+      objectReference: {fileID: 0}
     - target: {fileID: 8712205520260681827, guid: 4777b364f21329d4e8772b928fc28004,
         type: 3}
       propertyPath: m_Name
-      value: PlanetPresenter_1
+      value: PlanetPresenter_Villain
       objectReference: {fileID: 0}
     - target: {fileID: 8846102370445011945, guid: 4777b364f21329d4e8772b928fc28004,
         type: 3}
@@ -129,9 +104,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4777b364f21329d4e8772b928fc28004, type: 3}
---- !u!1 &5222753580732817268 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8712205520260681827, guid: 4777b364f21329d4e8772b928fc28004,
-    type: 3}
-  m_PrefabInstance: {fileID: 3502967592282181399}
-  m_PrefabAsset: {fileID: 0}
