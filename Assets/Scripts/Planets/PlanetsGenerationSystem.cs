@@ -48,5 +48,17 @@ namespace Planets
             var planet = _instantiator.InstantiatePrefabForComponent<PlanetController>(planetPrefab, position, Quaternion.identity, parent);
             return planet;
         }
+
+        private void OnValidate()
+        {
+            foreach (var planetPrefab in PlanetPrefabs)
+            {
+                if (planetPrefab == null)
+                {
+                    Debug.LogError($"{nameof(PlanetPrefabs)} has null prefab", this);
+                    break;
+                }
+            }
+        }
     }
 }
