@@ -7,7 +7,7 @@ namespace Weapons
     {
         [Inject] public IWeaponController WeaponController { get; }
 
-        private void Update()
+        private void LateUpdate()
         {
             TryHandleShoot();
         }
