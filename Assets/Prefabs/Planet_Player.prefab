@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2969416905180039283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3838425269261923360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02a998a3af2a70499ea8ad16ff647fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1891315675023761951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,16 +74,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6753804883155918542, guid: e8903208886e8b5498c40c28f56577e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.342
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057206766412760732, guid: e8903208886e8b5498c40c28f56577e5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057206766412760732, guid: e8903208886e8b5498c40c28f56577e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8558201804542405200, guid: e8903208886e8b5498c40c28f56577e5,
         type: 3}
       propertyPath: m_Name
-      value: Planet_1
+      value: Planet_Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8903208886e8b5498c40c28f56577e5, type: 3}
 --- !u!4 &2757580964209564531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4358262689223178604, guid: e8903208886e8b5498c40c28f56577e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1891315675023761951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3838425269261923360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3421503061067437631, guid: e8903208886e8b5498c40c28f56577e5,
     type: 3}
   m_PrefabInstance: {fileID: 1891315675023761951}
   m_PrefabAsset: {fileID: 0}
