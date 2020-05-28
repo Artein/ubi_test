@@ -524,10 +524,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2347da4cb7f654394dd8c1c2dd987e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlanetsAmount: 3
+  PlanetsAmount: 5
   GenerationDistanceRange:
     Min: 2
-    Max: 10
+    Max: 12
   PlanetPrefabs:
   - {fileID: 7993337469439527097, guid: 3d4bdb4906cf12049a35e2fff795dcf9, type: 3}
 --- !u!1 &1687258581
