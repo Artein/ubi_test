@@ -33,7 +33,11 @@ namespace Planets
             for (int i = 0; i < PlanetsAmount; i += 1)
             {
                 var prefab = PlanetPrefabs.GetRandom();
-                var planet = GeneratePlanet(prefab, Vector3.zero, _planetsContainer);
+                Assert.IsNotNull(prefab, "prefab != null");
+                
+                var offset = CalculateRandomOffset();
+                var position = transform.position + new Vector3(offset.x, offset.y);
+                var planet = GeneratePlanet(prefab, position, _planetsContainer);
                 _generatedPlanets.Add(planet);
             }
         }
