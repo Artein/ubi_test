@@ -27,7 +27,7 @@ namespace Planets
             return offset;
         }
 
-        private void Start()
+        private void Awake()
         {
             Assert.IsTrue(PlanetPrefabs.Count > 0);
             for (int i = 0; i < PlanetsAmount; i += 1)

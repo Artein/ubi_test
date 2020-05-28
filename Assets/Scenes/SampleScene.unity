@@ -275,9 +275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a8a2eb4f429164ea27affc964ff83c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solarSystemCenterProvider: {fileID: 748548941}
-  _planetsContainer: {fileID: 951114347}
-  _planetsGenerationSystem: {fileID: 1374479983}
+  SolarSystemCenterProvider: {fileID: 748548941}
+  PlanetsContainer: {fileID: 951114347}
+  PlanetsGenerationSystem: {fileID: 1374479983}
 --- !u!114 &968969285
 MonoBehaviour:
   m_ObjectHideFlags: 0
