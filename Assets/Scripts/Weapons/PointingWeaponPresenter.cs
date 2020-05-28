@@ -4,7 +4,9 @@ namespace Weapons
 {
     public class PointingWeaponPresenter : MonoBehaviour, IWeaponPresenter
     {
-        public Vector3 BulletSpawnPosition => transform.position;
+        [SerializeField] private Transform BulletPoint;
+        
+        public Vector3 BulletSpawnPosition => BulletPoint.transform.position;
         public Quaternion BulletSpawnRotation => transform.rotation;
     }
 }
