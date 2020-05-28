@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Weapons.Bullets;
 using Zenject;
 
 namespace Weapons
@@ -7,11 +8,14 @@ namespace Weapons
     public class WeaponController : MonoBehaviour, IWeapon
     {
         [Inject] private WeaponSettings _settings;
+        [Inject] private GameObject _bulletPrefab;
+        [Inject] private IBulletSpawnTransformProvider _bulletTransformProvider;
+        [Inject] private BulletFactory _bulletFactory;
 
-        public DateTime LastShootTime { get; private set; } = DateTime.Now;
+        public DateTime LastShootTime { get; private set; } = DateTime.MinValue;
 
         private float MillisecondsBetweenShots => 1000f * 60f / _settings.ShootsPerMinute;
-        private bool CanShoot => (DateTime.Now - LastShootTime).TotalMilliseconds <= MillisecondsBetweenShots;
+        private bool CanShoot => (DateTime.Now - LastShootTime).TotalMilliseconds >= MillisecondsBetweenShots;
 
         void IWeapon.DoShoot()
         {
@@ -22,8 +26,7 @@ namespace Weapons
             
             LastShootTime = DateTime.Now;
             
-            // todo: spawn bullet from prefab
-            // todo: must be poolable factory
+            _bulletFactory.Create(_bulletPrefab, _bulletTransformProvider.BulletSpawnPosition, _bulletTransformProvider.BulletSpawnRotation);
         }
     }
 }
