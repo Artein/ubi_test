@@ -2,6 +2,6 @@
 {
     public interface IWeaponInput
     {
-        IWeapon Weapon { get; }
+        IWeaponController WeaponController { get; }
     }
 }

@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Utils;
+using Zenject;
 
 namespace Weapons
 {
-    public class WeaponInput_AI : BaseWeaponInput
+    public class WeaponInput_AI : MonoBehaviour, IWeaponInput
     {
         [SerializeField, MinMax(0, 10)] private MinMax ShootDelayRange;
-        [SerializeField, MinMax(0, 10)] private MinMax InitialShootDelayRange; 
+        [SerializeField, MinMax(0, 10)] private MinMax InitialShootDelayRange;
+
+        [Inject] public IWeaponController WeaponController { get; }
 
         private void OnEnable()
         {
@@ -20,9 +23,10 @@ namespace Weapons
 
             do
             {
-                Weapon.DoShoot();
+                WeaponController.DoShoot();
                 
                 yield return new WaitForSeconds(ShootDelayRange.RandomValue);
+                
             } while (enabled);
         }
     }

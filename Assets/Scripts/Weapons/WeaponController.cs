@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Weapons
 {
-    public class WeaponController : MonoBehaviour, IWeapon
+    public class WeaponController : MonoBehaviour, IWeaponController
     {
         [Inject] private WeaponSettings _settings;
         [Inject] private GameObject _bulletPrefab;
@@ -17,7 +17,7 @@ namespace Weapons
         private float MillisecondsBetweenShots => 1000f * 60f / _settings.ShootsPerMinute;
         private bool CanShoot => (DateTime.Now - LastShootTime).TotalMilliseconds >= MillisecondsBetweenShots;
 
-        void IWeapon.DoShoot()
+        void IWeaponController.DoShoot()
         {
             if (!CanShoot)
             {

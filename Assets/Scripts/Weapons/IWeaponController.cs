@@ -1,6 +1,6 @@
 ﻿namespace Weapons
 {
-    public interface IWeapon
+    public interface IWeaponController
     {
         void DoShoot();
     }

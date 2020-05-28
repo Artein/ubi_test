@@ -36,7 +36,13 @@ namespace Weapons
             Container.BindFactory<Object, Vector3, Quaternion, IBullet, BulletFactory>()
                 .FromFactory<SimpleBulletFactory>();
 
-            Container.Bind<IWeapon>()
+            // todo: no guarantee that it injects. Must be abstract class with injection
+            Container.Bind<IWeaponController>()
+                .FromComponentInHierarchy()
+                .WhenInjectedInto<IWeaponInput>();
+            
+            // todo: no guarantee that it injects. Must be abstract class with injection
+            Container.Bind<IWeaponPresenter>()
                 .FromComponentInChildren()
                 .WhenInjectedInto<IWeaponInput>();
         }

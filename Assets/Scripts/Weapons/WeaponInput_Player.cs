@@ -1,16 +1,23 @@
 ﻿using UnityEngine;
+using Zenject;
 
 namespace Weapons
 {
-    public class WeaponInput_Player : BaseWeaponInput
+    public class WeaponInput_Player : MonoBehaviour, IWeaponInput
     {
+        [Inject] public IWeaponController WeaponController { get; }
+
         private void Update()
         {
-            // todo: handle rotation and fire here
+            TryHandleShoot();
+        }
+
+        private void TryHandleShoot()
+        {
             // todo: use new Input system
             if (Input.GetMouseButtonDown(0)) // primary button
             {
-                Weapon.DoShoot();
+                WeaponController.DoShoot();
             }
         }
     }

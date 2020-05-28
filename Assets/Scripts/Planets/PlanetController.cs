@@ -2,9 +2,9 @@
 
 namespace Planets
 {
-    public class PlanetController : MonoBehaviour
+    public class PlanetController : MonoBehaviour, IPlanetController
     {
-        public void HandleHit()
+        void IPlanetController.HandleHit()
         {
             if (!enabled)
             {

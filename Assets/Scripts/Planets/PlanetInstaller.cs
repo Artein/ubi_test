@@ -21,9 +21,15 @@ namespace Planets
                 .FromMethod(() => _planetsGenerationSystem.CalculateRandomOffset())
                 .WhenInjectedInto<PlanetMovementController>();
 
-            Container.Bind<PlanetController>()
+            // todo: no guarantee that it injects. Must be abstract class with injection
+            Container.Bind<IPlanetController>()
                 .FromComponentInParents()
-                .WhenInjectedInto<PlanetPresenter>();
+                .WhenInjectedInto<IPlanetPresenter>();
+
+            // todo: no guarantee that it injects. Must be abstract class with injection
+            Container.Bind<IPlanetPresenter>()
+                .FromComponentInChildren()
+                .WhenInjectedInto<IPlanetInput>();
         }
     }
 }
