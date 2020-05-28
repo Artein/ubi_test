@@ -9,7 +9,6 @@ namespace Movement
     public class PlanetMovementController : MonoBehaviour
     {
         [SerializeField, MinMax(1, 10)] private MinMax RotationsPerMinuteRange;
-        [SerializeField, Min(0)] private float AngularSpeedToEllipseSizeFactor = 1;
     
         private float AngularSpeed => _rotationsPerSecond.Value * 360f;
         private float _currentAngle;
@@ -38,15 +37,14 @@ namespace Movement
             }
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
-            UpdatePosition_Fixed();
+            UpdatePosition();
         }
 
-        private void UpdatePosition_Fixed()
+        private void UpdatePosition()
         {
-            var sizedAngularSpeed = AngularSpeed / _ellipseSize.magnitude * AngularSpeedToEllipseSizeFactor;
-            _currentAngle = GetNextAngle(_currentAngle, sizedAngularSpeed);
+            _currentAngle = GetNextAngle(_currentAngle, AngularSpeed);
             var currentAngleRad = _currentAngle * Mathf.Deg2Rad;
             var x = Mathf.Sin(currentAngleRad) * _ellipseSize.x;
             var y = Mathf.Cos(currentAngleRad) * _ellipseSize.y;
@@ -56,7 +54,7 @@ namespace Movement
 
         private static float GetNextAngle(float currentAngle, float angularSpeed)
         {
-            var newAngle = (currentAngle + angularSpeed) % 360f;
+            var newAngle = (currentAngle + angularSpeed * Time.deltaTime) % 360f;
             return newAngle;
         }
     }

@@ -58,5 +58,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationsPerMinuteRange:
     Min: 1
-    Max: 3
-  AngularSpeedToEllipseSizeFactor: 1
+    Max: 10
