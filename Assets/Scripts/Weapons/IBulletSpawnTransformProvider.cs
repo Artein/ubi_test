@@ -5,6 +5,6 @@ namespace Weapons
     public interface IBulletSpawnTransformProvider
     {
         Vector3 BulletSpawnPosition { get; }
-        Quaternion BulletSpawnRotation { get; }
+        Vector3 BulletSpawnDirection { get; }
     }
 }

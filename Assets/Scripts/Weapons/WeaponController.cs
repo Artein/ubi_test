@@ -26,7 +26,8 @@ namespace Weapons
             
             LastShootTime = DateTime.Now;
             
-            _bulletFactory.Create(_bulletPrefab, _bulletTransformProvider.BulletSpawnPosition, _bulletTransformProvider.BulletSpawnRotation);
+            IBullet bullet = _bulletFactory.Create(_bulletPrefab, _bulletTransformProvider.BulletSpawnPosition, Quaternion.Euler(_bulletTransformProvider.BulletSpawnDirection));
+            bullet.StartShoot(_bulletTransformProvider.BulletSpawnDirection);
         }
     }
 }

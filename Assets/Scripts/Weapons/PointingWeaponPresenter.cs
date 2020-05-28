@@ -7,6 +7,6 @@ namespace Weapons
         [SerializeField] private Transform BulletPoint;
         
         public Vector3 BulletSpawnPosition => BulletPoint.transform.position;
-        public Quaternion BulletSpawnRotation => transform.rotation;
+        public Vector3 BulletSpawnDirection => (BulletPoint.transform.position - transform.position).normalized;
     }
 }

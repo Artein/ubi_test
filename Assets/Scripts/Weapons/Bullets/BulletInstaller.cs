@@ -16,6 +16,10 @@ namespace Weapons.Bullets
             Container.Bind<BulletSettings>()
                 .FromMethod(GetRandomBulletSettings)
                 .WhenInjectedInto<BulletController>();
+
+            Container.Bind<BulletController>()
+                .FromComponentInParents()
+                .WhenInjectedInto<BulletPresenter>();
         }
 
         private BulletSettings GetRandomBulletSettings()

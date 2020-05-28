@@ -20,6 +20,10 @@ namespace Planets
             Container.Bind<Vector2>()
                 .FromMethod(() => _planetsGenerationSystem.CalculateRandomOffset())
                 .WhenInjectedInto<PlanetMovementController>();
+
+            Container.Bind<PlanetController>()
+                .FromComponentInParents()
+                .WhenInjectedInto<PlanetPresenter>();
         }
     }
 }
