@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LargeMissileBulletSettings
   m_EditorClassIdentifier: 
   Damage: 5
-  Acceleration: 3
+  Acceleration: 350
   Mass: 3
