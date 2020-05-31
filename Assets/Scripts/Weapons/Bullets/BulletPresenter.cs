@@ -1,13 +1,16 @@
-﻿using UnityEngine;
+﻿using Damage;
+using UnityEngine;
 using UnityEngine.Assertions;
 using Zenject;
 
 namespace Weapons.Bullets
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class BulletPresenter : MonoBehaviour, IBulletPresenter
+    public class BulletPresenter : MonoBehaviour, IBulletPresenter, IDamageProvider
     {
-        [Inject] private BulletController _controller;
+        [Inject] private IBullet _controller;
+
+        int IDamageProvider.DamageValue => _controller.DamageValue;
         
         private Rigidbody2D _rigidbody;
 
@@ -36,7 +39,7 @@ namespace Weapons.Bullets
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            _controller.HandleHit();
+            _controller.ApplyDamage(null);
         }
     }
 }

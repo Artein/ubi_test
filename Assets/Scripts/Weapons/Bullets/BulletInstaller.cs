@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Prefabs.Bullets;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Utils;
@@ -13,13 +12,14 @@ namespace Weapons.Bullets
         
         public override void InstallBindings()
         {
+            // provides random bullet settings for a single bullet
             Container.Bind<BulletSettings>()
                 .FromMethod(GetRandomBulletSettings)
-                .WhenInjectedInto<BulletController>();
+                .WhenInjectedInto<IBullet>();
 
-            Container.Bind<BulletController>()
+            Container.Bind<IBullet>()
                 .FromComponentInParents()
-                .WhenInjectedInto<BulletPresenter>();
+                .WhenInjectedInto<IBulletPresenter>();
         }
 
         private BulletSettings GetRandomBulletSettings()

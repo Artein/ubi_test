@@ -1,4 +1,4 @@
-﻿using Prefabs.Bullets;
+﻿using Damage;
 using UnityEngine;
 using Zenject;
 
@@ -6,23 +6,12 @@ namespace Weapons.Bullets
 {
     public class BulletController : MonoBehaviour, IBullet
     {
-        [Inject] private BulletSettings _settings;
-
         private bool _isShot;
 
-        public BulletSettings Settings => _settings;
-
+        [Inject] BulletSettings IBullet.Settings { get; }
+        int IDamageProvider.DamageValue => ((IBullet) this).Settings.DamageValue;
+        
         public event ShootStartingDelegate ShootStarting;
-
-        public void HandleHit()
-        {
-            if (!enabled)
-            {
-                return;
-            }
-            
-            Destroy(gameObject);
-        }
         
         void IBullet.StartShoot(Vector2 shootDirection)
         {
@@ -36,6 +25,15 @@ namespace Weapons.Bullets
             ShootStarting?.Invoke(shootDirection);
         }
 
-        public delegate void ShootStartingDelegate(Vector2 shootDirection);
+        bool IDamageReceiver.ApplyDamage(IDamageProvider damageProvider)
+        {
+            if (!enabled)
+            {
+                return false;
+            }
+            
+            Destroy(gameObject);
+            return true;
+        }
     }
 }

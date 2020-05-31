@@ -1,13 +1,18 @@
-﻿using JetBrains.Annotations;
+﻿using Damage;
+using JetBrains.Annotations;
 using UnityEngine;
 using Zenject;
 
 namespace Weapons.Bullets
 {
-    public interface IBullet
+    public delegate void ShootStartingDelegate(Vector2 shootDirection);
+    
+    public interface IBullet : IDamageProvider, IDamageReceiver
     {
-        Transform transform { get; }
+        BulletSettings Settings { get; }
+        event ShootStartingDelegate ShootStarting;
         void StartShoot(Vector2 direction);
+
     }
     
     [UsedImplicitly]
