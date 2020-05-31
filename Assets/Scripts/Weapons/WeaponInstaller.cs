@@ -38,7 +38,7 @@ namespace Weapons
 
             // todo: no guarantee that it injects. Must be abstract class with injection
             Container.Bind<IWeaponController>()
-                .FromComponentInHierarchy()
+                .FromComponentInChildren()
                 .WhenInjectedInto<IWeaponInput>();
             
             // todo: no guarantee that it injects. Must be abstract class with injection
