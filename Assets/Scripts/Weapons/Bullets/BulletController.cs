@@ -1,14 +1,15 @@
 ﻿using Damage;
 using UnityEngine;
-using Zenject;
 
 namespace Weapons.Bullets
 {
     public class BulletController : MonoBehaviour, IBulletController
     {
+        [SerializeField] private BulletSettings Settings;
+        
         private bool _isShot;
 
-        [Inject] BulletSettings IBulletController.Settings { get; }
+        BulletSettings IBulletController.Settings => Settings;
         int IDamageProvider.DamageValue => ((IBulletController) this).Settings.DamageValue;
         
         public event ShootStartingDelegate ShootStarting;

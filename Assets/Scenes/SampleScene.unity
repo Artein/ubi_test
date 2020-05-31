@@ -454,10 +454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee441999dd057304484a695666310d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Settings:
-  - {fileID: 11400000, guid: 60c5dced447cf894d86247fe1e2dec05, type: 2}
-  - {fileID: 11400000, guid: a41b6ac7cd0214d488cc41a49129c8c2, type: 2}
-  - {fileID: 11400000, guid: 98e7231cb1b5f1f4ea72ca160721b720, type: 2}
 --- !u!114 &968969288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,7 +471,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e160412112df6934ea473e05cf445f33, type: 2}
   - {fileID: 11400000, guid: 19c33b5fee772bd4a90dc16c132b8d2a, type: 2}
   BulletPrefabs:
-  - {fileID: 355851448639264383, guid: 23a118ae994f8b64485f32dc2e9ca4a1, type: 3}
+  - {fileID: 3348274699570372319, guid: 7fa799fc6f777894f880b125e7432053, type: 3}
+  - {fileID: 3348274699570372319, guid: 3613b441af32a774894a6934facc7caa, type: 3}
+  - {fileID: 3348274699570372319, guid: 043557da235250c43b43cc488d5f966f, type: 3}
   BulletsContainer: {fileID: 2019320548}
 --- !u!1 &1374479981
 GameObject:
