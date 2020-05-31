@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SmallMissileBulletSettings
   m_EditorClassIdentifier: 
   Damage: 1
-  Acceleration: 1000
+  Acceleration: 2000
   Mass: 1

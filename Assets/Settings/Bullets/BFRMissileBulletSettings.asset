@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BFRMissileBulletSettings
   m_EditorClassIdentifier: 
   Damage: 100
-  Acceleration: 100
+  Acceleration: 350
   Mass: 10
