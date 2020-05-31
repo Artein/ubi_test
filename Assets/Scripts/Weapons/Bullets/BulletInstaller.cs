@@ -15,9 +15,9 @@ namespace Weapons.Bullets
             // provides random bullet settings for a single bullet
             Container.Bind<BulletSettings>()
                 .FromMethod(GetRandomBulletSettings)
-                .WhenInjectedInto<IBullet>();
+                .WhenInjectedInto<IBulletController>();
 
-            Container.Bind<IBullet>()
+            Container.Bind<IBulletController>()
                 .FromComponentInParents()
                 .WhenInjectedInto<IBulletPresenter>();
         }

@@ -4,16 +4,16 @@ using Zenject;
 
 namespace Weapons.Bullets
 {
-    public class BulletController : MonoBehaviour, IBullet
+    public class BulletController : MonoBehaviour, IBulletController
     {
         private bool _isShot;
 
-        [Inject] BulletSettings IBullet.Settings { get; }
-        int IDamageProvider.DamageValue => ((IBullet) this).Settings.DamageValue;
+        [Inject] BulletSettings IBulletController.Settings { get; }
+        int IDamageProvider.DamageValue => ((IBulletController) this).Settings.DamageValue;
         
         public event ShootStartingDelegate ShootStarting;
         
-        void IBullet.StartShoot(Vector2 shootDirection)
+        void IBulletController.StartShoot(Vector2 shootDirection)
         {
             if (_isShot)
             {

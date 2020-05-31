@@ -8,7 +8,7 @@ namespace Weapons.Bullets
     [RequireComponent(typeof(Rigidbody2D))]
     public class BulletPresenter : MonoBehaviour, IBulletPresenter, IDamageProvider
     {
-        [Inject] private IBullet _controller;
+        [Inject] private IBulletController _controller;
 
         int IDamageProvider.DamageValue => _controller.DamageValue;
         

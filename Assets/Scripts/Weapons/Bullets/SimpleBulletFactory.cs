@@ -6,7 +6,7 @@ namespace Weapons.Bullets
 {
     // todo: must be poolable factory
     [UsedImplicitly]
-    public class SimpleBulletFactory : IFactory<Object, Vector3, Quaternion, IBullet>
+    public class SimpleBulletFactory : IFactory<Object, Vector3, Quaternion, IBulletController>
     {
         private readonly Transform _parent;
         private readonly DiContainer _container;
@@ -17,9 +17,9 @@ namespace Weapons.Bullets
             _container = container;
         }
 
-        public IBullet Create(Object prefab, Vector3 position, Quaternion rotation)
+        public IBulletController Create(Object prefab, Vector3 position, Quaternion rotation)
         {
-            var bullet = _container.InstantiatePrefabForComponent<IBullet>(prefab, position, rotation, _parent);
+            var bullet = _container.InstantiatePrefabForComponent<IBulletController>(prefab, position, rotation, _parent);
             return bullet;
         }
     }

@@ -7,7 +7,7 @@ namespace Weapons.Bullets
 {
     public delegate void ShootStartingDelegate(Vector2 shootDirection);
     
-    public interface IBullet : IDamageProvider, IDamageReceiver
+    public interface IBulletController : IDamageProvider, IDamageReceiver
     {
         BulletSettings Settings { get; }
         event ShootStartingDelegate ShootStarting;
@@ -16,5 +16,5 @@ namespace Weapons.Bullets
     }
     
     [UsedImplicitly]
-    public class BulletFactory : PlaceholderFactory<Object, Vector3, Quaternion, IBullet> {}
+    public class BulletFactory : PlaceholderFactory<Object, Vector3, Quaternion, IBulletController> {}
 }

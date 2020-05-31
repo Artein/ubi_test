@@ -33,7 +33,7 @@ namespace Weapons
                 .WithId(ID_BulletsContainer)
                 .FromInstance(BulletsContainer.transform);
 
-            Container.BindFactory<Object, Vector3, Quaternion, IBullet, BulletFactory>()
+            Container.BindFactory<Object, Vector3, Quaternion, IBulletController, BulletFactory>()
                 .FromFactory<SimpleBulletFactory>();
 
             // todo: no guarantee that it injects. Must be abstract class with injection
@@ -72,9 +72,9 @@ namespace Weapons
                     continue;
                 }
 
-                if (bulletPrefab.GetComponent<IBullet>() == null)
+                if (bulletPrefab.GetComponent<IBulletController>() == null)
                 {
-                    Debug.LogWarning($"{bulletPrefab.name} must implement {nameof(IBullet)} interface", this);
+                    Debug.LogWarning($"{bulletPrefab.name} must implement {nameof(IBulletController)} interface", this);
                 }
             }
 

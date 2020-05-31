@@ -29,7 +29,7 @@ namespace Weapons
             Vector3 direction = _bulletTransformProvider.BulletSpawnDirection;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            IBullet bullet = _bulletFactory.Create(_bulletPrefab, _bulletTransformProvider.BulletSpawnPosition, rotation);
+            IBulletController bullet = _bulletFactory.Create(_bulletPrefab, _bulletTransformProvider.BulletSpawnPosition, rotation);
             bullet.StartShoot(_bulletTransformProvider.BulletSpawnDirection);
         }
     }
