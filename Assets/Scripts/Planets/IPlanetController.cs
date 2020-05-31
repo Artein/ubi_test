@@ -1,7 +1,8 @@
-﻿namespace Planets
+﻿using Damage;
+
+namespace Planets
 {
-    public interface IPlanetController
+    public interface IPlanetController : IDamageReceiver
     {
-        void HandleHit();
     }
 }

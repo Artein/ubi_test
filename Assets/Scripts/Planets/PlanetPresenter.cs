@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Damage;
+using UnityEngine;
 using Zenject;
 
 namespace Planets
@@ -11,7 +12,11 @@ namespace Planets
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            PlanetController.HandleHit();
+            var damageProvider = collision.gameObject.GetComponent<IDamageProvider>();
+            if (damageProvider != null)
+            {
+                PlanetController.ApplyDamage(damageProvider);
+            }
         }
 
         void IPlanetPresenter.UpdateLookAt(Vector3 direction)
