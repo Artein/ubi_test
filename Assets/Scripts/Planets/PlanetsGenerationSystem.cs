@@ -9,7 +9,7 @@ namespace Planets
 {
     public class PlanetsGenerationSystem : MonoBehaviour
     {
-        [SerializeField, Min(0)] private int PlanetsAmount = 1;
+        [SerializeField, MinMax(0, 10)] private MinMax PlanetsAmountRange;
         [SerializeField, MinMax(0, 20)] private MinMax GenerationDistanceRange;
         [SerializeField] private List<PlanetController> PlanetPrefabs;
     
@@ -30,7 +30,8 @@ namespace Planets
         private void Awake()
         {
             Assert.IsTrue(PlanetPrefabs.Count > 0);
-            for (int i = 0; i < PlanetsAmount; i += 1)
+            var planetsAmount = PlanetsAmountRange.RandomValue;
+            for (int i = 0; i < planetsAmount; i += 1)
             {
                 var prefab = PlanetPrefabs.GetRandom();
                 Assert.IsNotNull(prefab, "prefab != null");

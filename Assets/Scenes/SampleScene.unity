@@ -524,7 +524,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2347da4cb7f654394dd8c1c2dd987e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlanetsAmount: 5
+  PlanetsAmountRange:
+    Min: 1
+    Max: 5
   GenerationDistanceRange:
     Min: 2
     Max: 12
